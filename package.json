@@ -4,6 +4,8 @@
   "description": "Creating RESTful API for Notes App",
   "main": "index.js",
   "scripts": {
+    "start": "nodemon server.js",
+    "lint": "eslint ./",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -21,5 +23,11 @@
   "bugs": {
     "url": "https://github.com/albarfikri/notes-app-backend/issues"
   },
-  "homepage": "https://github.com/albarfikri/notes-app-backend#readme"
+  "homepage": "https://github.com/albarfikri/notes-app-backend#readme",
+  "dependencies": {
+    "nodemon": "^2.0.21"
+  },
+  "devDependencies": {
+    "eslint": "^8.36.0"
+  }
 }
