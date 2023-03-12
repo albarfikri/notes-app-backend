@@ -2,7 +2,7 @@
   "name": "notes-app-backend",
   "version": "1.0.0",
   "description": "Creating RESTful API for Notes App",
-  "main": "index.js",
+  "main": "server.js",
   "scripts": {
     "start": "nodemon ./src/server.js",
     "lint": "eslint ./src",
