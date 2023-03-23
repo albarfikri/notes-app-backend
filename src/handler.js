@@ -1,5 +1,5 @@
-const { nanoid } = require("nanoid");
-const notes = require("./notes");
+const { nanoid } = require('nanoid');
+const notes = require('./notes');
 
 const addNoteHandler = (request, h) => {
   const { title, tags, body } = request.payload;
@@ -23,8 +23,8 @@ const addNoteHandler = (request, h) => {
 
   if (isSuccess) {
     const response = h.response({
-      status: "success",
-      message: "Note added successfully",
+      status: 'success',
+      message: 'Note added successfully',
       data: {
         noteId: id,
       },
@@ -35,15 +35,15 @@ const addNoteHandler = (request, h) => {
   }
 
   const response = h.response({
-    status: "fail",
-    message: "Failed to add note ",
+    status: 'fail',
+    message: 'Failed to add note ',
   });
   response.code(500);
   return response;
 };
 
 const getAllNotesHandler = () => ({
-  status: "success",
+  status: 'success',
   data: {
     notes,
   },
@@ -56,7 +56,7 @@ const getNoteByIdHandler = (request, h) => {
 
   if (note !== undefined) {
     return {
-      status: "success",
+      status: 'success',
       data: {
         note,
       },
@@ -64,8 +64,8 @@ const getNoteByIdHandler = (request, h) => {
   }
 
   const response = h.response({
-    status: "failed",
-    message: "Catatan tidak ditemukan",
+    status: 'failed',
+    message: 'Catatan tidak ditemukan',
   });
 
   response.code(404);
@@ -91,8 +91,8 @@ const editNoteByIdHandler = (request, h) => {
     };
 
     const response = h.response({
-      status: "Success",
-      message: "Notes has been updated successfully",
+      status: 'Success',
+      message: 'Notes has been updated successfully',
     });
 
     response.code(200);
@@ -100,8 +100,8 @@ const editNoteByIdHandler = (request, h) => {
   }
 
   const response = h.response({
-    status: "Fail",
-    message: "Faild to update note, Id was not found",
+    status: 'Fail',
+    message: 'Faild to update note, Id was not found',
   });
 
   response.code(404);
@@ -116,16 +116,16 @@ const deleteNoteByIdHandler = (request, h) => {
   if (index != -1) {
     notes.splice(index, 1);
     const response = h.response({
-      status: "success",
-      message: "Note has been deleted sucessfully",
+      status: 'success',
+      message: 'Note has been deleted sucessfully',
     });
     response.code(200);
     return response;
   }
 
   const response = h.response({
-    status: "failed",
-    message: "Note failed to be deleted, Id was not found !",
+    status: 'failed',
+    message: 'Note failed to be deleted, Id was not found !',
   });
 
   response.code(404);
